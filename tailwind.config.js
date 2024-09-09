@@ -8,7 +8,21 @@ export default {
     backgroundColor: theme => ({
       ...theme('colors'),
     }),
-    extend: {},
+    extend: {
+      fontFamily: {
+        'plus-jakarta-sans': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      colors: {
+        slate: {
+          100: '#E4F4FD',
+          300: '#9ABED5',
+          500: '#6B94A8',
+          700: '#4E6E7E',
+          900: '#133041'
+        },
+        lime: '#D8DB2F'
+      }
+    },
   },
   plugins: [],
 }
