@@ -26,7 +26,7 @@ function InputGroup(props: Props) {
                 <div className={`px-[16px] py-[12.5px] ${focused ? 'bg-lime text-slate-900' : 'bg-slate-100 text-slate-700'} font-bold text-[18px]  leading-[125%] transition-colors duration-300 ease-out`}>
                     {props.icon}
                 </div>
-                <input onBlur={onBlur} onFocus={onFocus} className='flex-grow outline-none border-none pl-4'  />
+                <input onBlur={onBlur} onFocus={onFocus} className='flex-grow outline-none border-none pl-4 font-bold text-[18px] text-slate-900 leading-[125%]'  />
             </div>
         </Wrapper>
     )
