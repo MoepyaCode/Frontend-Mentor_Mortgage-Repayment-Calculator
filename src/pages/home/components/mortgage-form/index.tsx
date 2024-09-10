@@ -10,7 +10,7 @@ function MortgageForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='bg-white px-6 py-8 sm:p-10 flex flex-col gap-6 sm:gap-10'>
+    <form onSubmit={handleSubmit} className='px-6 py-8 sm:p-10 flex flex-col gap-6 sm:gap-10'>
       {/* Form Heading */}
       <Header className='flex flex-wrap justify-between items-center gap-2'>
         <h1 className='font-bold text-slate-900 text-[24px] leading-[125%]'>Mortgage Calculator</h1>
@@ -30,14 +30,14 @@ function MortgageForm() {
           <InputGroup
             icon='years'
             title='Mortgage Term'
-            className='flex-row-reverse'
+            className='flex-row-reverse xl:max-w-[200px]'
           />
 
           {/* Interest Rate */}
           <InputGroup
             icon='%'
             title='Interest Rate'
-            className='flex-row-reverse'
+            className='flex-row-reverse xl:max-w-[200px]'
           />
         </Wrapper>
 
