@@ -41,7 +41,7 @@ function InputGroup(props: Props) {
                 <div className={`px-[16px] py-[12.5px] ${hasError ? 'bg-red text-white' : (focused ? 'bg-lime text-slate-900' : 'bg-slate-100 text-slate-700')} font-bold text-[18px]  leading-[125%] transition-colors duration-150 ease-out`}>
                     {props.icon}
                 </div>
-                <input id={props.name} type={props.type} onBlur={onBlur} onFocus={onFocus} name={props.name} className={`${props.inputClassName} outline-none border-none pl-4 font-bold text-[18px] text-slate-900 leading-[125%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`} />
+                <input id={props.name} type={props.type} onBlur={onBlur} onFocus={onFocus} name={props.name} className={`${props.inputClassName} outline-none border-none pl-4 font-bold text-[18px] text-slate-900 leading-[125%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full sm:w-auto`} />
             </label>
             
             {hasError && <p className='font-medium text-red text-[14px] leading-[150%]'>{error}</p>}

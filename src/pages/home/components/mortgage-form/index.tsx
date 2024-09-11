@@ -9,6 +9,7 @@ import {
   setMonthlyPayment,
   setTotalInterest,
   setTotalPayment,
+  setType,
   setVerification
 } from '@app-store/features'
 import { useEffect } from 'react'
@@ -22,7 +23,8 @@ function MortgageForm() {
     monthlyPayment,
     totalInterest,
     interestPaidMonthly,
-    totalPayment
+    totalPayment,
+    mortgageType
   } = useMortgageCalculator()
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -56,6 +58,9 @@ function MortgageForm() {
       dispatch(setTotalPayment(totalPayment))
     }
 
+    if(mortgageType !== mortgage.type) {
+      dispatch(setType(mortgageType))
+    }
   }, [
     verification,
     monthlyPayment,

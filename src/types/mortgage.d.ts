@@ -1,4 +1,7 @@
+declare type MortgageReturnType = 'repayment' | 'interest-only' | null
+
 interface MortgageState {
+    currency: 'EUR';
     /**
      * @description Mortgage form verification
      */
@@ -19,6 +22,10 @@ interface MortgageState {
      * @description Interest paid monthly
      */
     interestPaidMonthly: string | null;
+    /**
+     * @description Type of mortgage return
+     */
+    type: MortgageReturnType;
 }
 
 declare interface MortgageForm {
@@ -37,7 +44,7 @@ declare interface MortgageForm {
     /**
      * @description Mortgage type
      */
-    type: 'repayment' | 'interest-only';
+    type: MortgageReturnType;
 }
 
 declare interface MortgageFormVerification {

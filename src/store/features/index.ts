@@ -17,11 +17,13 @@ const initialVerificationState: MortgageFormVerification = {
 }
 
 const InitialMortgageState: MortgageState = {
+    currency: 'EUR',
     verification: initialVerificationState,
     monthlyPayment: null,
     totalPayment: null,
     totalInterest: null,
     interestPaidMonthly: null,
+    type: null,
 };
 
 const mortgageSlice = createSlice({
@@ -43,11 +45,15 @@ const mortgageSlice = createSlice({
         setInterestPaidMonthly: (state, action: PayloadAction<string | null>) => {
             state.interestPaidMonthly = action.payload;
         },
+        setType: (state, action: PayloadAction<MortgageReturnType>) => {
+            state.type = action.payload;
+        },
         reset: (state) => {
             state.monthlyPayment = null;
             state.totalPayment = null;
             state.totalInterest = null;
             state.interestPaidMonthly = null;
+            state.type = null;
             state.verification = initialVerificationState;
         }
     }
@@ -59,6 +65,7 @@ export const {
     setTotalPayment,
     setTotalInterest,
     setInterestPaidMonthly,
+    setType,
     reset
 } = mortgageSlice.actions;
 
