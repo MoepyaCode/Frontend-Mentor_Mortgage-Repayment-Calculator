@@ -20,7 +20,8 @@ export default {
           700: '#4E6E7E',
           900: '#133041'
         },
-        lime: '#D8DB2F'
+        lime: '#D8DB2F',
+        red: '#D73328'
       }
     },
   },

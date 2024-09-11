@@ -1,22 +1,63 @@
-declare interface Mortgage {
+interface MortgageState {
     /**
-     * Mortgage amount
+     * @description Mortgage form verification
      */
-    amount: number;
+    verification: MortgageFormVerification | null;
     /**
-     * Mortgage duration
+     * @description Monthly payment
      */
-    duration: number;
+    monthlyPayment: string | null;
     /**
-     * Mortgage interest rate
+     * @description Total payment
      */
-    interestRate: number;
+    totalPayment: string | null;
     /**
-     * Mortgage monthly payment
+     * @description Total interest
      */
-    monthlyPayment?: number;
+    totalInterest: string | null;
     /**
-     * Mortgage total payment
+     * @description Interest paid monthly
      */
-    totalPayment?: number;
+    interestPaidMonthly: string | null;
+}
+
+declare interface MortgageForm {
+    /**
+     * @description Mortgage amount
+     */
+    amount: string;
+    /**
+     * @description Mortgage duration in years
+     */
+    duration: string;
+    /**
+     * @description Mortgage interest rate
+     */
+    interestRate: string;
+    /**
+     * @description Mortgage type
+     */
+    type: 'repayment' | 'interest-only';
+}
+
+declare interface MortgageFormVerification {
+    /**
+     * @description Error messages
+     */
+    errors: Record<keyof MortgageForm, ErrorState>;
+    /**
+     * @description Verification status
+     */
+    verificationPassed: boolean | null;
+}
+
+declare interface ErrorState {
+    /**
+     * @description Error message
+     */
+    error: string | null;
+    /**
+     * @description Error status
+     */
+    hasError: boolean;
 }

@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
+import MortgageReducer from "./features";
 
-const Store = configureStore({
+export const Store = configureStore({
     reducer: {
-        // Add reducers here
+        mortgage: MortgageReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })
