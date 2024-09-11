@@ -12,10 +12,10 @@ describe('Mortgage Verification', () => {
         }
         const { errors } = validateForm(mortgage)
 
-        expect(errors.amount).toBe("This field is required")
-        expect(errors.duration).toBe("This field is required")
-        expect(errors.interestRate).toBe("This field is required")
-        expect(errors.type).toBe(null)
+        expect(errors.amount.error).toBe("This field is required")
+        expect(errors.duration.error).toBe("This field is required")
+        expect(errors.interestRate.error).toBe("This field is required")
+        expect(errors.type.error).toBe(null)
     })
 
     it('Complete Form', () => {
@@ -28,10 +28,10 @@ describe('Mortgage Verification', () => {
         }
         const { errors } = validateForm(mortgage)
 
-        expect(errors.amount).toBe(null)
-        expect(errors.duration).toBe(null)
-        expect(errors.interestRate).toBe(null)
-        expect(errors.type).toBe(null)
+        expect(errors.amount.error).toBe(null)
+        expect(errors.duration.error).toBe(null)
+        expect(errors.interestRate.error).toBe(null)
+        expect(errors.type.error).toBe(null)
     })
 
     it('Incomplete Form Verification Boolean', () => {
