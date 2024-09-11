@@ -74,7 +74,7 @@ function MortgageForm() {
       {/* Form Heading */}
       <Header className='flex flex-wrap justify-between items-center gap-2'>
         <h1 className='font-bold text-slate-900 text-[24px] leading-[125%]'>Mortgage Calculator</h1>
-        <button type='reset' className='font-medium text-slate-700 underline leading-[150%]'>Clear All</button>
+        <button type='reset' className='font-medium text-slate-700 xl:hover:text-slate-900 transition-colors duration-150 ease-out underline leading-[150%]'>Clear All</button>
       </Header>
 
       <Wrapper className='flex flex-col gap-6'>
