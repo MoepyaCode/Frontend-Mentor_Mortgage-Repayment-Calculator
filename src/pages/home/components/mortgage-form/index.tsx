@@ -66,7 +66,15 @@ function MortgageForm() {
     monthlyPayment,
     totalInterest,
     interestPaidMonthly,
-    totalPayment
+    totalPayment,
+    mortgageType,
+    dispatch, 
+    mortgage.verification,
+    mortgage.monthlyPayment,
+    mortgage.totalInterest,
+    mortgage.interestPaidMonthly,
+    mortgage.totalPayment,
+    mortgage.type,
   ])
 
   function handleReset(event: React.FormEvent<HTMLFormElement>) {

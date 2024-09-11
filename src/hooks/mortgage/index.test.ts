@@ -1,4 +1,4 @@
-import { ValidateForm } from "."
+import { validateForm } from "./validate-form"
 
 describe('Mortgage Verification', () => {
 
@@ -10,7 +10,7 @@ describe('Mortgage Verification', () => {
             interestRate: "",
             type: "repayment",
         }
-        const { errors } = ValidateForm(mortgage)
+        const { errors } = validateForm(mortgage)
 
         expect(errors.amount).toBe("This field is required")
         expect(errors.duration).toBe("This field is required")
@@ -26,7 +26,7 @@ describe('Mortgage Verification', () => {
             interestRate: "20",
             type: "repayment",
         }
-        const { errors } = ValidateForm(mortgage)
+        const { errors } = validateForm(mortgage)
 
         expect(errors.amount).toBe(null)
         expect(errors.duration).toBe(null)
@@ -42,7 +42,7 @@ describe('Mortgage Verification', () => {
             interestRate: "",
             type: "repayment",
         }
-        const { verificationPassed } = ValidateForm(mortgage)
+        const { verificationPassed } = validateForm(mortgage)
 
         expect(verificationPassed).toBe(false)
     })
@@ -55,7 +55,7 @@ describe('Mortgage Verification', () => {
             interestRate: "20",
             type: "repayment",
         }
-        const { verificationPassed } = ValidateForm(mortgage)
+        const { verificationPassed } = validateForm(mortgage)
 
         expect(verificationPassed).toBe(true)
     })
